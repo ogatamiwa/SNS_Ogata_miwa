@@ -85,7 +85,8 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function added(){
-        return view('auth.added');
+    public function added(Request $request){
+        $username = $request->input('username');
+        return view('auth.added',['username' => $username]);
     }
 }

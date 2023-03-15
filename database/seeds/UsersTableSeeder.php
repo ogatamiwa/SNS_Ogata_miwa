@@ -17,4 +17,5 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('ogata000'),
         ]);
     }
+
 }
