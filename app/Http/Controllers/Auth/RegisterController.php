@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'password' => 'required|string|min:8|max:20|alpha_num|confirmed',
             ];
 
-            $validator = Validator::make($request, $rules);
+            $validator = Validator::make($data, $rules);
             if($validator->fails()){
                 return redirect('/register')
                 ->withErrors($validator)
