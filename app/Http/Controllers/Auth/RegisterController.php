@@ -94,8 +94,9 @@ class RegisterController extends Controller
             }
 
             $this->create($data);
-            $user = $request -> session() -> get('username');
-            return redirect('added')->with('username',$user);
+            $request ->session()->put('username', $request->username);
+            // $user = $request -> session() -> get('username');
+            return redirect('added')->with('username');
         }
         return view('auth.register');
     }
